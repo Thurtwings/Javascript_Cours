@@ -19,6 +19,7 @@ function save_data(e)
         {
             // Une fois la requête bien envoyée, on vide le champ texte
             document.querySelector("textarea").value = "";
+            Get_Data_Json();
         }
     });
     
@@ -41,3 +42,26 @@ function Getdata()
 
 
 Getdata();
+setInterval(Getdata, 1000);
+
+
+function Get_Data_Json()
+{
+    $.ajax("GetData_JSON.php",
+        {
+            dataType: "json",
+            success: function (result) 
+            {
+                // console.log(result);
+                result.forEach(function(row)
+                {
+                    var new_p_id = "parag_" + row.id;
+                    if(!document.querySelector("#"+new_p_id))
+                    {
+                        document.querySelector("#display").innerHTML += "<p id='"+new_p_id+"'>Ligne " + row.id + " : " + row.value + "</p>";
+
+                    }
+                });
+            }
+        })
+}

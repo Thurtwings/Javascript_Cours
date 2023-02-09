@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Liste de contacts</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+
+    <body>
+
+        <div id="all_screens" ><!-- Pour afficher les différents écrans, c'est cet élément qu'il faudra faire bouger, horizontalement -->
+
+           <!-- Écran ajout de contact -->
+            <div class="screen" id="add_screen">
+
+                <div class="screen_contents">
+                    <!-- <button class="back_button">&times;</button> -->
+                    
+                    <h2>Ajouter un contact</h2>
+
+                    <form novalidate><!-- Des données seront à récupérer dans les champs ci-dessous -->
+
+                        <input type="text" placeholder="Nom" id="name_field">
+
+                        <input type="text" placeholder="Prénom" id="surname_field">
+
+                        <input type="text" placeholder="Téléphone" id="phone_field">
+
+                        <input type="email" placeholder="E-mail" id="email_field">
+
+                        <button type="button" id="validate_button">Ajouter</button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+           <!-- Écran liste de contacts -->
+            <div class="screen" id="list_screen">
+
+                <div class="screen_contents">
+
+                    <h2>Contacts</h2>
+
+                    <ul id="contacts_list">
+                        <!-- Des éléments de liste devront être ajoutés ici -->
+                    </ul>
+
+                    <button id="add_button">Ajouter un contact</button>
+
+                </div>
+
+            </div>
+
+           <!-- Écran fiche d'un contact -->
+            <div class="screen" id="details_screen">
+
+                <div class="screen_contents">
+
+                    <button id="back_button" class="back_button">&times;</button>
+                        
+                        <!-- Les contenus texte des éléments ci-dessous devront être mis à jour -->
+
+                        <h2 id="details_name">???</h2>
+
+                        <p>Téléphone : <span id="details_phone">???</span></p>
+
+                        <p>E-mail : <span id="details_email">???</span></p>
+
+                </div>
+
+            </div>
+
+        </div>
+        <script src="js/jquery-3.6.3.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+
+</html>
